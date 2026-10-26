@@ -338,18 +338,9 @@ module stand_braces(n, z1, inset = 0) {
     L = span(n);
     g = gusset_leg;
     brace_w = min(rail_w, side_rail_w) - 2 * eps;
-    front_y = max(inset, plate_trim);
-    back_y = inset;
-    for (row = [0, 1]) let(front = row == 0, row_y = front ? front_y : back_y)
-        translate([0, front ? row_y : L - row_y, 0])
-            scale([1, front ? 1 : -1, 1]) {
-                translate([0, eps, 0]) prism(XZ, brace_w)
-                    polygon([[xpost_len + inset, z1 - g], [xpost_len + inset, z1], [xpost_len + inset + g, z1]]);
-                translate([0, eps, 0]) prism(XZ, brace_w)
-                    polygon([[plate_w - arm_len.x - inset, z1 - g], [plate_w - arm_len.x - inset, z1], [plate_w - arm_len.x - inset - g, z1]]);
-                translate([plate_w - side_rail_w - inset, 0, 0]) prism(YZ, brace_w)
-                    polygon([[arm_len.y, z1 - g], [arm_len.y, z1], [arm_len.y + g, z1]]);
-    }
+    sym_y(L) translate([0, inset, 0])
+        translate([plate_w - side_rail_w - inset, 0, 0]) prism(YZ, brace_w)
+            polygon([[arm_len.y, z1 - g], [arm_len.y, z1], [arm_len.y + g, z1]]);
 }
 module stand(n = 1) {
     L = span(n);

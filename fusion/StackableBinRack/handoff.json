@@ -1,6 +1,6 @@
 {
   "source": "../../stackable-bin-rack.scad",
-  "source_sha256": "E4940CB265FC85ACEEEC41AD1F78C9EDEFB0B0D09A1E97B2286C7F179C4910DC",
+  "source_sha256": "F377786477FA56ABE9B54C9868E0953C59197B70D1FEED311F759A7B4B74457B",
   "units": "mm",
   "threads": "none",
   "fusion_build": "2706.1.14",
@@ -28,8 +28,8 @@
   "parameter_probe": null,
   "offline_tests": "34 passing locally; see ../../docs/validation/summary.md",
   "prior_runtime": "Historical native evidence is local-only; current Fusion runtime is not_run",
-  "builder_sha256": "77C79E4B3CD93BDDE243595C15CE543168C2800987D0EAB69F5CEBC5EF3B0B98",
-  "contract_sha256": "C5B7AF7D67D3E0409274A26D4873B2B54456FAE76963AE4A984BC803F6AD0572",
+  "builder_sha256": "EAEA9EE0946FA961A2098074884CE7C17E2B35F46C82B2A1D1C8DDF1656D7698",
+  "contract_sha256": "689AD1B5D6471F2125F6626F94FF15652154DBD1E6DD4B25AFD3348D0EB0BFDD",
   "bin_size_in_use_mm": [
     "100 * len_n",
     "100 * wid_n + 35",

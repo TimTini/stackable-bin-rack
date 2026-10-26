@@ -20,7 +20,7 @@ Dùng mã **CT01–CT05** và tên tiếng Việt dưới đây khi trao đổi 
 
 `dài = 100L`, `sâu = 100D + 35`, `cao = 80H`.
 
-Phần nhô giữ **35 mm khi D thay đổi**. Trong tư thế in của source, các trục không trùng với ba trục sử dụng: dài đi theo Y của cap/frame và X của bin; sâu đi theo X của cap/frame và Z của bin; cao đi theo Z của frame và Y của bin. `span(n)=120+100(n-1)` là chiều Y của tấm cap/frame/stand theo số ô dài; `plate_w=124+100(D-1)` là chiều X của tấm theo số ô sâu. CT04 và CT05 dùng `foot_h=20`, tức khoảng từ mặt bàn đến mặt dưới tấm đế. Chân đã đưa sát góc của từng tấm đế; CT04 chỉ giữ sai lệch dựng hình 0,01 mm theo X. Cả hai mẫu có sáu gân cùng tiết diện tam giác danh nghĩa 10 × 10 mm, dày 7,98 mm; vát đáy chân 2 mm giữ nguyên.
+Phần nhô giữ **35 mm khi D thay đổi**. Trong tư thế in của source, các trục không trùng với ba trục sử dụng: dài đi theo Y của cap/frame và X của bin; sâu đi theo X của cap/frame và Z của bin; cao đi theo Z của frame và Y của bin. `span(n)=120+100(n-1)` là chiều Y của tấm cap/frame/stand theo số ô dài; `plate_w=124+100(D-1)` là chiều X của tấm theo số ô sâu. CT04 và CT05 dùng `foot_h=20`, tức khoảng từ mặt bàn đến mặt dưới tấm đế. Chân đã đưa sát góc của từng tấm đế; CT04 chỉ giữ sai lệch dựng hình 0,01 mm theo X. Cả hai mẫu có hai gân bên hông cùng tiết diện tam giác danh nghĩa 10 × 10 mm, dày 7,98 mm; vát đáy chân 2 mm giữ nguyên.
 
 | Chi tiết | Bao 1×1×1 trong STL canonical | Các mặt/khớp chính |
 | :--- | :---: | :--- |
@@ -36,7 +36,7 @@ Các kích thước bao là số đo hình học của mesh đã xuất, không 
 
 Bộ canonical cho `size=1x1x1` nằm trong [exports/size-multiplier/1x1x1](../exports/size-multiplier/1x1x1/). Hash source hiện tại đã xác minh là:
 
-`E4940CB265FC85ACEEEC41AD1F78C9EDEFB0B0D09A1E97B2286C7F179C4910DC`
+`F377786477FA56ABE9B54C9868E0953C59197B70D1FEED311F759A7B4B74457B`
 
 Manifest tổng hợp [exports/size-multiplier/manifest.json](../exports/size-multiplier/manifest.json) ghi cùng source hash và hash từng STL. Hash SHA-256 canonical 1×1×1:
 
@@ -45,8 +45,8 @@ Manifest tổng hợp [exports/size-multiplier/manifest.json](../exports/size-mu
 | `cap` | [cap.stl](../exports/size-multiplier/1x1x1/cap.stl) | `D96A7A1DE486CD1743C26D0AB4BB7BCA377A34EFDCD55F930CD00610C4075EE9` |
 | `frame` | [frame.stl](../exports/size-multiplier/1x1x1/frame.stl) | `47D5D78DD22E735A01EB2F699C5CD7F81EE414D0CEC727388042ECD2AEC610F5` |
 | `bin` | [bin.stl](../exports/size-multiplier/1x1x1/bin.stl) | `0D05C9683990DF69FAA9CFD1A9D80D5D62D920CB046E826E7EA188F12B0B8437` |
-| `stand` | [stand.stl](../exports/size-multiplier/1x1x1/stand.stl) | `908DEA04A7F08F618641A35A8F1D19777E32488B8889B88D65D34D5B8B0E30F1` |
-| `stand_bin` | [stand_bin.stl](../exports/size-multiplier/1x1x1/stand_bin.stl) | `4AB81AEDFA9E52F3B81F245ABC041FAEA9341A0FB7A295EEBD072F686BC330A0` |
+| `stand` | [stand.stl](../exports/size-multiplier/1x1x1/stand.stl) | `92792E2F3E05BDBDC172985835CF01EF5A0E71B3C9EDF4F079E2F7D60EDAFB05` |
+| `stand_bin` | [stand_bin.stl](../exports/size-multiplier/1x1x1/stand_bin.stl) | `3951EB7C3B52BB40126EB4ABCDBFF678DB195178962A599DA6B8C898E82CDED1` |
 
 ## Tư thế in và bằng chứng FDM
 
