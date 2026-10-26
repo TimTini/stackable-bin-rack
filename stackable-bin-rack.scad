@@ -94,7 +94,7 @@ side_r = 5;
 
 eps = 0.01;
 
-assert(foot_h > foot_chamfer + gusset_leg, "stand legs must leave room for the bevel and braces");
+assert(foot_h > foot_chamfer, "stand legs must leave room for the floor bevel");
 assert(stand_inset >= foot_chamfer && stand_inset < min(rail_w, side_rail_w, win_center.x - win_size.x / 2), "stand inset must fit inside the rail and window border");
 assert(socket_r > tip_r, "socket must clear tip");
 assert(socket_depth > tip_h, "tip must not bottom out");
@@ -315,7 +315,6 @@ module stand_leg_geometry(n, z0, z1, inset = 0) {
             translate([-inset - edge_eps, 0, 0]) linear_extrude(z1 - z0 - c) ppost2d();
         }
         stand_bevels(n, z0, inset);
-        stand_braces(n, z1, inset);
     }
 }
 module stand_bevels(n, z0, inset = 0) {
@@ -333,14 +332,6 @@ module stand_bevels(n, z0, inset = 0) {
             linear_extrude(c, scale = [(w - 2 * c) / w, (h - 2 * c) / h])
                 translate([-base_cx, -h / 2])
                     if (i == 0) xpost2d(); else ppost2d();
-}
-module stand_braces(n, z1, inset = 0) {
-    L = span(n);
-    g = gusset_leg;
-    brace_w = min(rail_w, side_rail_w) - 2 * eps;
-    sym_y(L) translate([0, inset, 0])
-        translate([plate_w - side_rail_w - inset, 0, 0]) prism(YZ, brace_w)
-            polygon([[arm_len.y, z1 - g], [arm_len.y, z1], [arm_len.y + g, z1]]);
 }
 module stand(n = 1) {
     L = span(n);

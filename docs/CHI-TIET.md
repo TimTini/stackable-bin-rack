@@ -11,7 +11,7 @@ Dùng mã **CT01–CT05** và tên tiếng Việt dưới đây khi trao đổi 
 | <a id="ct01"></a>**CT01** | <a href="parts/cap.png"><img src="parts/cap.png" alt="CT01 — Nắp chụp" width="150"></a> | **Nắp chụp trên**<br>`cap` | Tấm chụp trên cùng, có cửa sổ lớn và bốn ổ socket nhận các đầu locator của frame. In phẳng theo tấm, mặt tấm nằm trên bàn; khi lắp trong `assembly`, nắp được lật để socket úp xuống đầu chốt frame. Bao 1×1×1: **124 × 119,93 × 8 mm**. STL: [cap.stl](../exports/size-multiplier/1x1x1/cap.stl). |
 | <a id="ct02"></a>**CT02** | <a href="parts/frame.png"><img src="parts/frame.png" alt="CT02 — Khung kệ" width="150"></a> | **Khung kệ**<br>`frame` | Khung chịu lực của mỗi ô: tấm, ray trước/sau, cột góc, dovetail nối cạnh, bốn socket phía dưới và bốn đầu locator phía trên. Đầu locator ghép vào socket của frame/nắp kế tiếp; các gờ trong đỡ CT03. In base-down theo tấm và các cột dựng lên. Bao 1×1×1: **124 × 124,93 × 96 mm**. STL: [frame.stl](../exports/size-multiplier/1x1x1/frame.stl). |
 | <a id="ct03"></a>**CT03** | <a href="parts/bin.png"><img src="parts/bin.png" alt="CT03 — Khay chứa, tư thế in" width="150"></a><br><a href="parts/bin-use.png"><img src="parts/bin-use.png" alt="CT03 — Khay chứa, tư thế sử dụng" width="150"></a> | **Khay chứa**<br>`bin` | Khay mở miệng và mở phía trên theo hình học source, có đáy, thành nghiêng, vai, mái/lip và các mặt panel. Ảnh trên là tư thế in; ảnh dưới dùng đúng biến đổi `bin_in_frame()` của source để thấy lòng và miệng khi sử dụng. Trong cụm, mặt sau tựa về ray **+X**, miệng hướng **−X**; các gờ/ledge của CT02 hoặc CT05 đỡ và dẫn khay khi trượt vào. Bao print-axis 1×1×1: **100 × 80 × 135 mm**; kích thước sử dụng theo quy ước là **dài 100L × sâu (100D+35) × cao 80H mm**. STL: [bin.stl](../exports/size-multiplier/1x1x1/bin.stl). |
-| <a id="ct04"></a>**CT04** | <a href="parts/stand.png"><img src="parts/stand.png" alt="CT04 — Đế khung" width="150"></a> | **Đế đỡ khung**<br>`stand` | Đế được dựng độc lập cho CT02 bằng vòng tấm dày 8 mm, cửa sổ vát, bốn chân/gân và bốn đầu locator hướng lên. Đầu locator ghép vào socket dưới CT02; selector đặt chân xuống bàn (`foot_h=20`). Bao 1×1×1 gồm phần chốt: **124 × 120 × 33 mm**. STL: [stand.stl](../exports/size-multiplier/1x1x1/stand.stl). |
+| <a id="ct04"></a>**CT04** | <a href="parts/stand.png"><img src="parts/stand.png" alt="CT04 — Đế khung" width="150"></a> | **Đế đỡ khung**<br>`stand` | Đế được dựng độc lập cho CT02 bằng vòng tấm dày 8 mm, cửa sổ vát, bốn chân và bốn đầu locator hướng lên. Đầu locator ghép vào socket dưới CT02; selector đặt chân xuống bàn (`foot_h=20`). Bao 1×1×1 gồm phần chốt: **124 × 120 × 33 mm**. STL: [stand.stl](../exports/size-multiplier/1x1x1/stand.stl). |
 | <a id="ct05"></a>**CT05** | <a href="parts/stand_bin.png"><img src="parts/stand_bin.png" alt="CT05 — Đế khay" width="150"></a> | **Đế đỡ khay**<br>`stand_bin` | Đế thấp đặt trực tiếp dưới CT03 gồm vòng tấm inset **4 mm**, ray/gờ tựa trước-sau, ledge trong, stop rail phía sau và bốn chân liền khối. Các khoảng mở giữa ray tạo đường nhận và dẫn CT03; khay trượt trên ledge và dừng ở stop rail. Selector đặt chân xuống bàn với cùng gầm danh nghĩa 20 mm. Bao 1×1×1: **116 × 112 × 38 mm**. STL: [stand_bin.stl](../exports/size-multiplier/1x1x1/stand_bin.stl). |
 
 ## Quy ước kích thước và vị trí
@@ -20,14 +20,14 @@ Dùng mã **CT01–CT05** và tên tiếng Việt dưới đây khi trao đổi 
 
 `dài = 100L`, `sâu = 100D + 35`, `cao = 80H`.
 
-Phần nhô giữ **35 mm khi D thay đổi**. Trong tư thế in của source, các trục không trùng với ba trục sử dụng: dài đi theo Y của cap/frame và X của bin; sâu đi theo X của cap/frame và Z của bin; cao đi theo Z của frame và Y của bin. `span(n)=120+100(n-1)` là chiều Y của tấm cap/frame/stand theo số ô dài; `plate_w=124+100(D-1)` là chiều X của tấm theo số ô sâu. CT04 và CT05 dùng `foot_h=20`, tức khoảng từ mặt bàn đến mặt dưới tấm đế. Chân đã đưa sát góc của từng tấm đế; CT04 chỉ giữ sai lệch dựng hình 0,01 mm theo X. Cả hai mẫu có hai gân bên hông cùng tiết diện tam giác danh nghĩa 10 × 10 mm, dày 7,98 mm; vát đáy chân 2 mm giữ nguyên.
+Phần nhô giữ **35 mm khi D thay đổi**. Trong tư thế in của source, các trục không trùng với ba trục sử dụng: dài đi theo Y của cap/frame và X của bin; sâu đi theo X của cap/frame và Z của bin; cao đi theo Z của frame và Y của bin. `span(n)=120+100(n-1)` là chiều Y của tấm cap/frame/stand theo số ô dài; `plate_w=124+100(D-1)` là chiều X của tấm theo số ô sâu. CT04 và CT05 dùng `foot_h=20`, tức khoảng từ mặt bàn đến mặt dưới tấm đế. Chân đã đưa sát góc của từng tấm đế; CT04 chỉ giữ sai lệch dựng hình 0,01 mm theo X. Cả hai mẫu không còn gân tam giác nối chân với đế; vát đáy chân 2 mm giữ nguyên.
 
 | Chi tiết | Bao 1×1×1 trong STL canonical | Các mặt/khớp chính |
 | :--- | :---: | :--- |
 | CT01 — `cap` | 124 × 119,93 × 8 | Cửa sổ, bốn socket tam giác bo/stadium; `socket_r=2,1 mm` là bán kính offset/bo của profile locator, chiều sâu socket 6 mm. |
 | CT02 — `frame` | 124 × 124,93 × 96 | Ray cao 18 mm, bốn socket dưới, bốn locator trên; cột trên cùng ở `post_top=91` mm và đầu chốt cao thêm 5 mm. |
 | CT03 — `bin` | 100 × 80 × 135 | Thành 4 mm, đáy 4 mm; hai mặt facet trong khoảng 41,47° là vùng cần lưu ý khi slice. |
-| CT04 — `stand` | 124 × 120 × 33 | Tấm dày 8 mm, bốn chân/gân, bốn locator; khe kiểm tra hướng kính frame/stand xấp xỉ 0,1 mm và khe đầu chốt 1 mm trong audit. |
+| CT04 — `stand` | 124 × 120 × 33 | Tấm dày 8 mm, bốn chân, bốn locator; khe kiểm tra hướng kính frame/stand xấp xỉ 0,1 mm và khe đầu chốt 1 mm trong audit. |
 | CT05 — `stand_bin` | 116 × 112 × 38 | Tấm inset 4 mm, ledge khoảng 609,97 mm² và stop khoảng 320 mm² trong audit 1×1×1; bốn chân, gầm 20 mm. |
 
 Các kích thước bao là số đo hình học của mesh đã xuất, không phải dung sai sau in. Dung sai dovetail, socket, gờ khay và độ chặt khi in cần mẫu thử vật lý.
@@ -36,7 +36,7 @@ Các kích thước bao là số đo hình học của mesh đã xuất, không 
 
 Bộ canonical cho `size=1x1x1` nằm trong [exports/size-multiplier/1x1x1](../exports/size-multiplier/1x1x1/). Hash source hiện tại đã xác minh là:
 
-`F377786477FA56ABE9B54C9868E0953C59197B70D1FEED311F759A7B4B74457B`
+`9E519D4E3312E77B0DE24FFB8A723AFE75BC02D0FB733013B7B6C5CB413130C9`
 
 Manifest tổng hợp [exports/size-multiplier/manifest.json](../exports/size-multiplier/manifest.json) ghi cùng source hash và hash từng STL. Hash SHA-256 canonical 1×1×1:
 
@@ -45,8 +45,8 @@ Manifest tổng hợp [exports/size-multiplier/manifest.json](../exports/size-mu
 | `cap` | [cap.stl](../exports/size-multiplier/1x1x1/cap.stl) | `D96A7A1DE486CD1743C26D0AB4BB7BCA377A34EFDCD55F930CD00610C4075EE9` |
 | `frame` | [frame.stl](../exports/size-multiplier/1x1x1/frame.stl) | `47D5D78DD22E735A01EB2F699C5CD7F81EE414D0CEC727388042ECD2AEC610F5` |
 | `bin` | [bin.stl](../exports/size-multiplier/1x1x1/bin.stl) | `0D05C9683990DF69FAA9CFD1A9D80D5D62D920CB046E826E7EA188F12B0B8437` |
-| `stand` | [stand.stl](../exports/size-multiplier/1x1x1/stand.stl) | `92792E2F3E05BDBDC172985835CF01EF5A0E71B3C9EDF4F079E2F7D60EDAFB05` |
-| `stand_bin` | [stand_bin.stl](../exports/size-multiplier/1x1x1/stand_bin.stl) | `3951EB7C3B52BB40126EB4ABCDBFF678DB195178962A599DA6B8C898E82CDED1` |
+| `stand` | [stand.stl](../exports/size-multiplier/1x1x1/stand.stl) | `5E2BF02A78757DE6F62F8D14142D59D8E54A29EA5499450D814FF78DD3106A8D` |
+| `stand_bin` | [stand_bin.stl](../exports/size-multiplier/1x1x1/stand_bin.stl) | `C5A1B1388E1DECA839A9CFFBB3460F69471E69EA402038E181F6C659DE3BA912` |
 
 ## Tư thế in và bằng chứng FDM
 

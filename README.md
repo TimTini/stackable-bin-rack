@@ -2,7 +2,7 @@
 
 Cấu trúc thư mục và vai trò dữ liệu: [docs/STRUCTURE.md](docs/STRUCTURE.md).
 
-Hai stand được dựng riêng từ profile và các mặt lắp cần thiết, giữ phong cách rack và gầm 20 mm. Quy tắc khay giữ `[100*dài,100*sâu+35,80*cao]` mm. Source hiện tại: `F377786477FA56ABE9B54C9868E0953C59197B70D1FEED311F759A7B4B74457B`. Tóm tắt kiểm chứng công khai tại [docs/validation/summary.md](docs/validation/summary.md); hồ sơ làm việc chi tiết là local-only.
+Hai stand được dựng riêng từ profile và các mặt lắp cần thiết, giữ phong cách rack và gầm 20 mm. Quy tắc khay giữ `[100*dài,100*sâu+35,80*cao]` mm. Source hiện tại: `9E519D4E3312E77B0DE24FFB8A723AFE75BC02D0FB733013B7B6C5CB413130C9`. Tóm tắt kiểm chứng công khai tại [docs/validation/summary.md](docs/validation/summary.md); hồ sơ làm việc chi tiết là local-only.
 
 `stackable-bin-rack.scad` là nguồn CSG có tham số cho `cap`, `frame`, `bin`, `stand` và `stand_bin`. Đơn vị mm. OpenSCAD 2026.09.29, backend Manifold. Mesh tham chiếu gốc không nằm trong snapshot công khai.
 
@@ -23,8 +23,8 @@ Khay ở tư thế sử dụng, theo thứ tự dài × sâu × cao:
 - `part="cap"`, `"frame"`, `"bin"`: xuất riêng ba chi tiết gốc tại tư thế in.
 - `part="stand"`: vòng đế dựng riêng, bốn chân và bốn chốt nối frame. Tấm đế dày 8 mm nằm trên gầm 20 mm. Tổng chiều cao bản in, gồm chốt: 33 mm. Đường bao sạch với cửa sổ vát cạnh.
 - `part="stand_bin"`: đế riêng thu vào 4 mm, rail/gờ tựa dựng chủ động để giữ bin trực tiếp, có bốn chân liền. Tổng chiều cao bản in, gồm rail: 38 mm. Các mẩu cột, notch và tab của frame được loại khỏi thiết kế stand.
-- Hai stand in chân xuống bàn và dùng support dưới các nhịp đế. `foot_h=20` là khoảng cách từ mặt bàn đến mặt dưới tấm đế cho cả hai mẫu; gân chéo nằm sát chân. `stand_inset=4` điều khiển phần cắt vào trong của `stand_bin`.
-- Chân của cả hai stand nằm sát bốn góc của chính tấm đế; bỏ khoảng lùi 1–2 mm cũ. Riêng `stand` giữ sai lệch dựng hình 0,01 mm theo X để tránh mặt suy biến. Hai gân bên hông cùng tiết diện tam giác danh nghĩa 10 × 10 mm và dày 7,98 mm, neo theo chân để không bị mask cắt lệch. Vát đáy chân 2 mm vẫn giữ.
+- Hai stand in chân xuống bàn và dùng support dưới các nhịp đế. `foot_h=20` là khoảng cách từ mặt bàn đến mặt dưới tấm đế cho cả hai mẫu. `stand_inset=4` điều khiển phần cắt vào trong của `stand_bin`.
+- Chân của cả hai stand nằm sát bốn góc của chính tấm đế; bỏ khoảng lùi 1–2 mm cũ. Riêng `stand` giữ sai lệch dựng hình 0,01 mm theo X để tránh mặt suy biến. Không còn gân tam giác nối chân với đế. Vát đáy chân 2 mm vẫn giữ.
 - `part="layout"`: các chi tiết đặt cách nhau theo kích thước hiện tại để chuẩn bị in.
 - `part="assembly"`: cụm lắp theo `asm_spec`; `[[1,2],[1,2]]` tạo hai tầng có cùng bố trí khung đơn và khung đôi. Các tầng dùng cùng thứ tự chia part để chốt/socket thẳng hàng. `[2]` và `[1,1]` có chiều dài vật lý khác nhau do viền riêng của từng frame; cấu hình trộn hai hàng này được báo lỗi.
 - `part="assembly_bin"`: khay bin trên `stand_bin` tại vị trí lắp. `asm_stand=false` tắt stand của cụm frame thông thường.

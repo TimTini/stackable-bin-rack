@@ -14,7 +14,7 @@ import math
 import os
 import traceback
 
-SOURCE_SHA256 = "F377786477FA56ABE9B54C9868E0953C59197B70D1FEED311F759A7B4B74457B"
+SOURCE_SHA256 = "9E519D4E3312E77B0DE24FFB8A723AFE75BC02D0FB733013B7B6C5CB413130C9"
 BUILD_POSE = "assembly"  # assembly or layout; changing pose rebuilds a new document
 STAGE = ["init"]
 CM = 0.1  # mm -> cm (Fusion database length unit)
