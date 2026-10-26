@@ -133,7 +133,7 @@ module footprint(y0, y1) {
     polygon(rounded([[0, y0], [plate_w, y0], [plate_w, y1], [0, y1]], [0, plate_corner_r, plate_corner_r, 0]));
 }
 module stand_mask(inset, L) {
-    if (inset == 0) offset(delta = eps) footprint(plate_trim, L);
+    if (inset == 0) footprint(plate_trim, L);
     else intersection() {
         footprint(inset, L - inset);
         translate([inset, inset]) square([plate_w - 2 * inset, L - 2 * inset]);
@@ -292,53 +292,63 @@ module frame(n = 1) {
     tips(L);
 }
 
-// Four feet follow the frame corner profiles and are clipped to the selected footprint.
+// Four feet follow the frame corner profiles and are placed in the selected footprint.
 module stand_legs(n = 1, z0 = -foot_h, z1 = 0, inset = 0) {
     L = span(n);
-    // A 1 mm reveal keeps every leg face inside the plate's outside faces.
     // The positive overlap above z1's plate underside makes a solid joint.
     intersection() {
-        stand_leg_geometry(n, z0, z1);
+        stand_leg_geometry(n, z0, z1, inset);
         translate([0, 0, z0 - 1])
-            linear_extrude(z1 - z0 + 2) stand_mask(inset + foot_chamfer / 2, L);
+            linear_extrude(z1 - z0 + 2) stand_mask(inset, L);
     }
 }
-module stand_leg_geometry(n, z0, z1) {
+module stand_leg_geometry(n, z0, z1, inset = 0) {
     L = span(n);
     c = foot_chamfer;
+    // A 0.01 mm X overlap avoids zero-area union facets at full-width plate edges.
+    edge_eps = inset == 0 ? eps : 0;
     union() {
-        // Set the feet back by their 2 mm chamfer, inside the plate end faces.
-        // This gives a real overhang and avoids coincident union seams at Y=L.
-        sym_y(L) translate([0, c, z0 + c])
-            linear_extrude(z1 - z0 - c) { xpost2d(); ppost2d(); }
-        stand_bevels(n, z0);
-        stand_braces(n, z1);
+        // Move each inherited corner profile to the selected plate perimeter.
+        // The floor bevel, rather than a XY setback, keeps the floor contact inset.
+        sym_y(L) translate([0, inset, z0 + c]) {
+            translate([inset + edge_eps, 0, 0]) linear_extrude(z1 - z0 - c) xpost2d();
+            translate([-inset - edge_eps, 0, 0]) linear_extrude(z1 - z0 - c) ppost2d();
+        }
+        stand_bevels(n, z0, inset);
+        stand_braces(n, z1, inset);
     }
 }
-module stand_bevels(n, z0) {
+module stand_bevels(n, z0, inset = 0) {
     L = span(n);
     c = foot_chamfer;
+    edge_eps = inset == 0 ? eps : 0;
     // Extrude from the exact post profile toward the floor. The top vertices
     // are shared with the straight post; a 3D hull introduced sliver seams.
-    sym_y(L) translate([0, c, 0]) for (i = [0, 1])
+    sym_y(L) translate([0, inset, 0]) for (i = [0, 1])
         let(w = i == 0 ? xpost_len : arm_len.x,
             h = i == 0 ? rail_w : arm_len.y,
-            cx = i == 0 ? w / 2 : plate_w - w / 2)
+            base_cx = i == 0 ? w / 2 : plate_w - w / 2,
+            cx = i == 0 ? base_cx + inset + edge_eps : base_cx - inset - edge_eps)
         translate([cx, h / 2, z0 + c]) mirror([0, 0, 1])
             linear_extrude(c, scale = [(w - 2 * c) / w, (h - 2 * c) / h])
-                translate([-cx, -h / 2])
+                translate([-base_cx, -h / 2])
                     if (i == 0) xpost2d(); else ppost2d();
 }
-module stand_braces(n, z1) {
+module stand_braces(n, z1, inset = 0) {
     L = span(n);
     g = gusset_leg;
-    sym_y(L) translate([0, foot_chamfer, 0]) {
-        translate([0, eps, 0]) prism(XZ, rail_w - 2 * eps)
-            polygon([[xpost_len, z1 - g], [xpost_len, z1], [xpost_len + g, z1]]);
-        translate([0, eps, 0]) prism(XZ, rail_w - 2 * eps)
-            polygon([[plate_w - arm_len.x, z1 - g], [plate_w - arm_len.x, z1], [plate_w - arm_len.x - g, z1]]);
-        translate([plate_w - side_rail_w + eps, 0, 0]) prism(YZ, side_rail_w - 2 * eps)
-            polygon([[arm_len.y, z1 - g], [arm_len.y, z1], [arm_len.y + g, z1]]);
+    brace_w = min(rail_w, side_rail_w) - 2 * eps;
+    front_y = max(inset, plate_trim);
+    back_y = inset;
+    for (row = [0, 1]) let(front = row == 0, row_y = front ? front_y : back_y)
+        translate([0, front ? row_y : L - row_y, 0])
+            scale([1, front ? 1 : -1, 1]) {
+                translate([0, eps, 0]) prism(XZ, brace_w)
+                    polygon([[xpost_len + inset, z1 - g], [xpost_len + inset, z1], [xpost_len + inset + g, z1]]);
+                translate([0, eps, 0]) prism(XZ, brace_w)
+                    polygon([[plate_w - arm_len.x - inset, z1 - g], [plate_w - arm_len.x - inset, z1], [plate_w - arm_len.x - inset - g, z1]]);
+                translate([plate_w - side_rail_w - inset, 0, 0]) prism(YZ, brace_w)
+                    polygon([[arm_len.y, z1 - g], [arm_len.y, z1], [arm_len.y + g, z1]]);
     }
 }
 module stand(n = 1) {

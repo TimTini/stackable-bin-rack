@@ -1,6 +1,6 @@
 {
-  "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
-  "stand_design": "independent profiles; no complete frame extraction",
+  "source_sha256": "E4940CB265FC85ACEEEC41AD1F78C9EDEFB0B0D09A1E97B2286C7F179C4910DC",
+  "stand_design": "independent profiles; corner feet; six equal 10x10x7.98 mm nominal braces",
   "dimension_order": "length, depth including 35mm nose, height; mm",
   "cases": [
     {
@@ -18,8 +18,8 @@
         "cap": "d96a7a1de486cd1743c26d0ab4bb7bca377a34efdcd55f930cd00610c4075ee9",
         "frame": "47d5d78dd22e735a01eb2f699c5cd7f81ee414d0cec727388042ecd2aec610f5",
         "bin": "0d05c9683990df69faa9cfd1a9d80d5d62d920cb046e826e7ea188f12b0b8437",
-        "stand": "4225b9c7a47f04d63fa5e99b91a32891b0df81f1598f860cfe5c9c8f7b61e572",
-        "stand_bin": "3b1157ffb4c4731edb5f90b6d8589649cf7b9112a14e3720e2abb445af0db975"
+        "stand": "908dea04a7f08f618641a35a8f1d19777e32488b8889b88d65d34d5b8b0e30f1",
+        "stand_bin": "4ab81aedfa9e52f3b81f245abc041faea9341a0fb7a295eebd072f686bc330a0"
       }
     },
     {
@@ -37,8 +37,8 @@
         "cap": "91e6adc796c181c2b0cf1df4751dd845170cc2731c8f489e615bf809b8197f51",
         "frame": "a394e6d528e0e88c6649968d62dc81201866d6595f231e0cafd3a1c2af664199",
         "bin": "21441d6fb038ab43b02e7d37610d54f2de8ff1ef1f7e7ba5f971c8ecb540e75e",
-        "stand": "2883e23118a628d09e85c0cd13bbfde8b5687353ef56293d2a1a47f66c8d7d4b",
-        "stand_bin": "3f18522683ecffd7278dbb66703abc48dd90254c278b364459f0b851496e1494"
+        "stand": "6ef1d6f3ac9a11f4b694660da5a2583333c0cae4ed771350e39c3b93aab772c6",
+        "stand_bin": "a76b4315be2000786ca2b6ccfe5fa100fd4f6d31d83a9e6f5ceb1d63430e5066"
       }
     },
     {
@@ -56,8 +56,8 @@
         "cap": "03e48a01c2e79db55819d1b008195378b332bb77a5182a03a4b4c5feaa54bbf0",
         "frame": "0e98a38eec201f4bb6229b5fdd1826d166f20181178c2d1244714e4be6b15d84",
         "bin": "6b86f23f3a09258c90863ddadef68fb7c18e79e5b049bd015691017e5252b491",
-        "stand": "c6e1c20efd01bfa0ae74e3f93d22419cb96ce089cf182c61457f52cfd7219a77",
-        "stand_bin": "fda0a36ed77db0efc8ae5a1df94e779b57f55340d08c1c1cb2920957eb0ff374"
+        "stand": "297b1e280b74c811ebd46d0151f1729ee557bd654144bb8512205d0175ff0fb2",
+        "stand_bin": "cbef72cb5e6c4a410fa99daada1edb645c4d9032715ad952e9144f7d1de4ef69"
       }
     },
     {
@@ -75,8 +75,8 @@
         "cap": "c7a247170f1ed4fa6ed38ce0058fb7be26cec2a78e87b03ed986f0ff35700d87",
         "frame": "3b616dd50dc161e5d4757585256d0b688f0cd879ff00be2fc1f0d21cd7bbc2fb",
         "bin": "6a7db4b3c92a1c3cee20223b01db6146424239fcf8e073f44741feb6d42efe55",
-        "stand": "2eaddaab4f644aa40667bade9c63506caec9cb218d3971678ad3635ea17632da",
-        "stand_bin": "36e6fa604c8f2d2b2abddc8d0f89a4d389ff3121da072967a910986e76e0ff5b"
+        "stand": "85a717676127b0837844113fa45a5f0d90afa0065b1a142ed9e3fc21f0beb33c",
+        "stand_bin": "8431bb0f49b18905529a382df6ca0e1f4f8ff1315419edff365abab60d62b49d"
       }
     },
     {
@@ -94,8 +94,8 @@
         "cap": "d96a7a1de486cd1743c26d0ab4bb7bca377a34efdcd55f930cd00610c4075ee9",
         "frame": "3b5cb1f353da6e0d705f1a7f9ab0a51e9b53eaf70fad3755d8cf86e8bad27fb8",
         "bin": "c1987f2edae2454a93fb166db4386ee803c0d26aacf5d844be29531635089ec9",
-        "stand": "4225b9c7a47f04d63fa5e99b91a32891b0df81f1598f860cfe5c9c8f7b61e572",
-        "stand_bin": "3b1157ffb4c4731edb5f90b6d8589649cf7b9112a14e3720e2abb445af0db975"
+        "stand": "908dea04a7f08f618641a35a8f1d19777e32488b8889b88d65d34d5b8b0e30f1",
+        "stand_bin": "4ab81aedfa9e52f3b81f245abc041faea9341a0fb7a295eebd072f686bc330a0"
       }
     },
     {
@@ -113,8 +113,8 @@
         "cap": "dea27e142bd09ae2d4df9a1e39d5475d18adef27a3fc014c58339295264ba49a",
         "frame": "1b357ca93acffe42cefe8d2244303c6b81925d962c88a1557ba78f7b32115e62",
         "bin": "4bf8cab8cf5b7b8450deae04c19b31fe7b533211f30e0b2750f122bdb8354e63",
-        "stand": "b4f90da6005b471863d5ee42ee8814f880375f89cad769db921b7e6c35308eb9",
-        "stand_bin": "a9f8a110fb008b6f7d62aa00734612ed390e6b7d0abaae507a9edc53cad21fe6"
+        "stand": "5f3d81a974fb65a0cda8873de8fd599e29c04f8d757da2608f58b27342bf920c",
+        "stand_bin": "fe680f81fb421ad560719b182fd79e52567cca3416bde0d9985596817134c2d5"
       }
     },
     {
@@ -132,8 +132,8 @@
         "cap": "461203fe1db116d6ba39dfe0ad2357477f6b5fc5e8a87fe5efed59e8add3eda6",
         "frame": "a7a953a377bd39c309413bb98f3bb02b7c6548dd448916fa7103c2c19e405341",
         "bin": "431c14c7eba84012ccde62aeab921b25e10081ab02b3b93a19dcdbb0bf5a3bc9",
-        "stand": "91dcfa068fa6ef2f9d6808beb8e6aafb7d3255c6a2c332f11ec326daafa4e674",
-        "stand_bin": "3d46718870a8df092d6a240c647f0b248f81b1052daf1c6a4e97a361fe715cb0"
+        "stand": "e1e00c8f9a5a419d63e9524398e48f8a482e80cb8ed2496992e488d3b2f6b8f1",
+        "stand_bin": "d41145eb3659e626599bd2b44e21caf3be6efb856dd5edb3482ad225b72e2d3a"
       }
     }
   ]
