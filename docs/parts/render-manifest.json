@@ -1,0 +1,50 @@
+[
+  {
+    "part": "cap",
+    "selector": "cap",
+    "image": "cap.png",
+    "bytes": 28828,
+    "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+    "command": ["${OPENSCAD_BIN:-openscad.com}", "--backend=manifold", "--hardwarnings", "-D", "part=\"cap\"", "-D", "size=[1,1,1]", "--render", "--imgsize=1280,900", "--viewall", "--autocenter", "--projection=o", "--camera=0,0,0,65,0,35,400", "--colorscheme=Tomorrow", "-o", "docs/parts/cap.png", "stackable-bin-rack.scad"]
+  },
+  {
+    "part": "frame",
+    "selector": "frame",
+    "image": "frame.png",
+    "bytes": 40522,
+    "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+    "command": ["${OPENSCAD_BIN:-openscad.com}", "--backend=manifold", "--hardwarnings", "-D", "part=\"frame\"", "-D", "size=[1,1,1]", "--render", "--imgsize=1280,900", "--viewall", "--autocenter", "--projection=o", "--camera=0,0,0,65,0,35,400", "--colorscheme=Tomorrow", "-o", "docs/parts/frame.png", "stackable-bin-rack.scad"]
+  },
+  {
+    "part": "bin",
+    "selector": "bin",
+    "image": "bin.png",
+    "bytes": 37530,
+    "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+    "command": ["${OPENSCAD_BIN:-openscad.com}", "--backend=manifold", "--hardwarnings", "-D", "part=\"bin\"", "-D", "size=[1,1,1]", "--render", "--imgsize=1280,900", "--viewall", "--autocenter", "--projection=o", "--camera=0,0,0,65,0,35,400", "--colorscheme=Tomorrow", "-o", "docs/parts/bin.png", "stackable-bin-rack.scad"]
+  },
+  {
+    "part": "stand",
+    "selector": "stand",
+    "image": "stand.png",
+    "bytes": 33772,
+    "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+    "command": ["${OPENSCAD_BIN:-openscad.com}", "--backend=manifold", "--hardwarnings", "-D", "part=\"stand\"", "-D", "size=[1,1,1]", "--render", "--imgsize=1280,900", "--viewall", "--autocenter", "--projection=o", "--camera=0,0,0,65,0,35,400", "--colorscheme=Tomorrow", "-o", "docs/parts/stand.png", "stackable-bin-rack.scad"]
+  },
+  {
+    "part": "stand_bin",
+    "selector": "stand_bin",
+    "image": "stand_bin.png",
+    "bytes": 30908,
+    "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+    "command": ["${OPENSCAD_BIN:-openscad.com}", "--backend=manifold", "--hardwarnings", "-D", "part=\"stand_bin\"", "-D", "size=[1,1,1]", "--render", "--imgsize=1280,900", "--viewall", "--autocenter", "--projection=o", "--camera=0,0,0,65,0,35,400", "--colorscheme=Tomorrow", "-o", "docs/parts/stand_bin.png", "stackable-bin-rack.scad"]
+  },
+  {
+    "part": "bin",
+    "selector": "bin_in_frame",
+    "image": "bin-use.png",
+    "bytes": 32324,
+    "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+    "command": ["${OPENSCAD_BIN:-openscad.com}", "--backend=manifold", "--hardwarnings", "-D", "part=\"__catalogue_none__\"", "-D", "size=[1,1,1]", "--render", "--imgsize=1280,900", "--viewall", "--autocenter", "--projection=o", "--camera=0,0,0,65,0,35,400", "--colorscheme=Tomorrow", "-o", "docs/parts/bin-use.png", "<temporary>/bin-use.scad"]
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "source": "../../stackable-bin-rack.scad",
+  "source_sha256": "BCF8E5D5388478CD60DC3BD1944C13579CE0F58C3AAB314F0B9A3D16F40083A2",
+  "units": "mm",
+  "threads": "none",
+  "fusion_build": "2706.1.14",
+  "fusion_runtime": "not_run_for_current_source",
+  "entrypoint": "StackableBinRack.py",
+  "siblings": [
+    "Contract.py",
+    "StackableBinRack.manifest"
+  ],
+  "default_document": "assembly of cap, frame, bin at size [1,1,1]; stands are SCAD-only",
+  "recompute": [
+    "len_n",
+    "wid_n",
+    "hgt_n",
+    "plate_t",
+    "tip_r",
+    "socket_r",
+    "bin_wall"
+  ],
+  "rebuild": [
+    "assembly/layout pose switch",
+    "multi-unit assembly requires a dedicated native builder"
+  ],
+  "native_report": null,
+  "parameter_probe": null,
+  "offline_tests": "34 passing locally; see ../../docs/validation/summary.md",
+  "prior_runtime": "Historical native evidence is local-only; current Fusion runtime is not_run",
+  "builder_sha256": "B917C6FC26FCE405BC41C8D3822BA50D6D82C9F5833975199EFA9619507CB7BD",
+  "contract_sha256": "7659239E66E47A3EC6C896C0D6AC48A51FAE75C7EAD17547D3732B69146AA3C2",
+  "bin_size_in_use_mm": [
+    "100 * len_n",
+    "100 * wid_n + 35",
+    "80 * hgt_n"
+  ],
+  "fixed_nose_mm": 35,
+  "public_validation_summary": "../../docs/validation/summary.md"
+}

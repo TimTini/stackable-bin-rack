@@ -1,0 +1,9 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "script",
+  "author": "",
+  "description": {"": "STACKERS rack (bb_file): native parametric cap, frame and bin from stackable-bin-rack.scad; size in cells via Change Parameters."},
+  "version": "1.0.0",
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}
