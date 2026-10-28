@@ -22,14 +22,35 @@ module small_bins(n) {
     for(i=[0:n-1]) translate([0,i*shared_step,0])
         color(i%2==0 ? "Silver" : "LightSteelBlue") positioned_bin(1);
 }
+// Keep the rack's chamfered rail and rounded, corner-cut window language.
+module divider_profile() {
+    c = rail_chamfer;
+    difference() {
+        polygon([[0,plate_t],[plate_w,plate_t],[plate_w,post_top-c],
+                 [plate_w-c,post_top],[c,post_top],[0,post_top-c]]);
+        x0 = xpost_len;
+        x1 = plate_w-xpost_len;
+        z0 = rail_top+ledge[1];
+        z1 = post_top-12;
+        k = win_corner;
+        polygon(rounded([[x0+k,z0],[x1-k,z0],[x1,z0+k],[x1,z1-k],
+                         [x1-k,z1],[x0+k,z1],[x0,z1-k],[x0,z0+k]],
+                        [for(j=[0:7]) win_fillet]));
+    }
+}
 module shared_dividers(n, tall=true) {
     for(i=[1:n-1]) {
         y = 10+i*shared_step-shared_gap-shared_wall;
-        // Walls are joined to the perimeter by their ends; ledges support bin edges.
-        color("Goldenrod") translate([0,y,plate_t])
-            cube([plate_w,shared_wall,(tall ? post_top : rail_top)-plate_t]);
-        color("Goldenrod") translate([0,y-2,plate_t])
-            cube([plate_w-side_rail_w,shared_wall+4,ledge[1]]);
+        color(tall ? "LightSteelBlue" : "SlateGray") translate([0,y,0]) {
+            if(tall) prism(XZ,shared_wall) divider_profile();
+            else prism(YZ,plate_w) rail2d(shared_wall);
+            // Same 1 mm bearing reach as before; bevel the exposed top corners.
+            translate([0,-2,0]) prism(YZ,plate_w-side_rail_w)
+                polygon([[0,plate_t],[shared_wall+4,plate_t],
+                         [shared_wall+4,plate_t+ledge[1]-1],
+                         [shared_wall+3,plate_t+ledge[1]],
+                         [1,plate_t+ledge[1]],[0,plate_t+ledge[1]-1]]);
+        }
     }
 }
 module shared_frame(n) {
