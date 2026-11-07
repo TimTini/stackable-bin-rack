@@ -1,5 +1,7 @@
 # Local CAD/runtime state. Publish source, documentation and canonical exports.
 backups/
+# User-supplied source archives stay local.
+/*.zip
 work/
 reference/
 fusion/validation/
@@ -10,6 +12,8 @@ fusion/*.json
 fusion/**/*.log
 fusion/**/*.rpc.json
 fusion/**/native-report.json
+fusion/*.stl
+fusion/*.f3d
 .vscode/
 __pycache__/
 *.py[cod]
