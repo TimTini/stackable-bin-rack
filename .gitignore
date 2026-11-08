@@ -27,6 +27,15 @@ exports/makerworld_cover.jpg
 exports/*.stl
 exports/*.png
 exports/stand-rebuild/
+exports/gusset-shared/
+exports/in-use-datum/
+exports/lite/
+exports/lite-all-face-bridges/
+exports/lite-edge-corners/
+exports/lite-edge-revision/
+exports/lite-front-bridges/
+exports/lite-mesh-optimized/
+presets/
 exports/size-multiplier/*/
 !exports/size-multiplier/manifest.json
 !exports/size-multiplier/1x1x1/
